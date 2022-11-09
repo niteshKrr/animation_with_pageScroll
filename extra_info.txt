@@ -1,0 +1,28 @@
+
+--> I am going to use "aos plugin" for this page scrolling animation
+
+--> search "aos" on google
+
+--> Go to "aos" official Github page and read how to use
+
+---> Replace your _app.js with below code
+
+import { useEffect } from "react";
+import AOS from "aos";
+
+import "aos/dist/aos.css";
+import "../scss/style.scss";
+
+function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    AOS.init({
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 50,
+    });
+  }, []);
+
+  return <Component {...pageProps} />;
+}
+
+export default MyApp;
